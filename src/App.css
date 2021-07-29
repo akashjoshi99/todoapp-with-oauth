@@ -1,38 +1,146 @@
-.App {
-  text-align: center;
+::-webkit-scrollbar {
+  display: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background: linear-gradient(
+    90deg,
+    #03254c 0%,
+    #d0efff 100%
+  );
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todoApp {
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: start;
+  width: 520px;
+  min-height: 600px;
+  background: #272829;
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+
+
+
+.complete {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.todoForm {
+  margin-bottom: 32px;
+}
+
+.todoInput {
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #03254c;
+  background: linear-gradient(
+    90deg,
+    #1167b1 0%,
+    #03254c 90%
+  );
+  outline: none;
+  width: 320px;
+  
+  color: #fff;
+}
+
+.todoInput::placeholder {
+  color: #fff;
+}
+
+.todoButton {
+  padding: 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background-color:#03254c;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+
+.todoContainer {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.todoList {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 4px auto;
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    #03254c 0%,
+    #1167b1 100%
+  );
+
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
 }
 
-.App-link {
-  color: #61dafb;
+.todoList:nth-child(4n + 1) {
+  background: linear-gradient(
+    90deg,
+    #1167b1 0%,
+    #2a9df4 100%
+  );
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todoList:nth-child(4n + 2) {
+  background: linear-gradient(
+    90deg,
+    #2a9df4 0%,
+    #d0efff 100%
+  );
 }
+
+.todoList:nth-child(4n + 3) {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+}
+
+.todoList:hover {
+  opacity: 0.9;
+  transition: transform 0.1s ease-in-out;
+  transform: scale(1.01) !important;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.deleteIcon {
+  margin-right: 5px;
+  color: #fff;
+}
+
+.deleteIcon:hover {
+  color: #03254c;
+  transition: transform 0.1s ease-in-out;
+  transform: scale(1.2) !important;
+}
+
